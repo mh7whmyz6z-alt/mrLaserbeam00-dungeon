@@ -1,11 +1,12 @@
-extends Node2D
+extends Control
 
-@onready var label = $Label
+@onready var title = $CenterContainer/VBoxContainer/Title
+@onready var subtitle = $CenterContainer/VBoxContainer/Subtitle
 
 func _ready():
-	label.text = "The Dungeon Awakens...\n\nMaximum AI Power Engaged."
+	title.text = "mrLaserbeam00-dungeon"
+	subtitle.text = "The Dungeon Awakens...\n\nMaximum AI Power Engaged."
 	print("Crawler has entered the Godot chamber.")
 
 func _process(delta):
-	# The Architect is always watching
 	pass
