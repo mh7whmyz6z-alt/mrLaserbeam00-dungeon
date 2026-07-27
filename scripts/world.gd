@@ -4,7 +4,7 @@ extends Node2D
 @onready var debug_label: Label = $CanvasLayer/UI/DebugLabel
 
 # === LAYOUT DATA (edit this to change the level) ===
-var platforms = [
+var platforms: Array[Dictionary] = [
 	{"x": 300, "y": 520, "width": 300},   # Starting platform
 	{"x": 700, "y": 440, "width": 280},
 	{"x": 1100, "y": 360, "width": 260},
@@ -42,7 +42,7 @@ func _position_player_on_first_platform() -> void:
 	if platforms.size() == 0:
 		return
 	
-	var first := platforms[0]
+	var first: Dictionary = platforms[0]
 	# Place player so its feet rest on the platform top
 	$Player.position = Vector2(first.x, first.y - 52)   # 52 = half player height + platform half-height
 
